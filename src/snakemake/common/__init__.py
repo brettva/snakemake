@@ -379,3 +379,13 @@ def copy_permission_safe(src: str, dst: str):
     if os.path.exists(dst):
         os.unlink(dst)
     shutil.copy(src, dst)
+
+
+# Import subprocess utilities for executor plugins and other components
+from .subprocess_utils import (
+    check_output_with_retries,
+    run_with_retries,
+    is_connection_error,
+    CONNECTION_ERROR_PATTERNS,
+    RetryableSubprocessError,
+)
